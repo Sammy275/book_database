@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sign Up
+{% endblock title %}
+
+{% block main %}
+    <br>
+   <form class="form-group" action="{{ url_for('logout') }}" method="POST">
+       <button type="submit" class="btn btn-danger">Log Out</button>
+   </form>
+{% endblock main %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock title %}
+
+{% block main %}
+    {% if name %}
+    <h1>Welcome {{ name }}</h1>
+    {% else %}
+    <h1>Welcome</h1>
+    {% endif %}
+    <p>Welcome to the digital libray. Here you will hopefully find the books which you are looking
+        for.
+    </p>
+
+    <form class="form-group" action="{{ url_for('search') }}" method="POST">
+        <input type="text" class="form-control" placeholder="search" name="search"><br>
+        <select class="form-control" name="search-by">
+            <option value="isbn">isbn</option>
+            <option value="title">title</option>
+            <option value="author">author</option>
+            <option value="year">year</option>
+        </select><br>
+        <button type="submit" class="btn btn-primary">Search...</button>
+    </form>
+{% endblock main %}
